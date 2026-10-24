@@ -38,7 +38,7 @@
     [1, "Ziggy approves."],
     [5, "Purr level: tractor."],
     [12, "One braincell, fully charged."],
-    [25, "Grandpa is getting a bit jealous."],
+    [25, "I'm getting a bit jealous."],
     [50, "Ziggy has forgotten every other human."],
     [100, "Certified Ziggy petter."],
     [250, "Okay, now he's just a puddle."]
