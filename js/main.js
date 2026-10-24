@@ -6,6 +6,7 @@
   var frame = document.getElementById("pet");
   var hearts = frame.querySelector(".hearts");
   var text = document.getElementById("pet-text");
+  var moodLine = document.getElementById("pet-mood");
   var soundBtn = document.getElementById("sound");
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -43,15 +44,15 @@
     [18, "Loaf mode activated."],
     [25, "I'm getting a bit jealous."],
     [35, "Belly offered. It's a trap."],
-    [50, "Ziggy has forgotten every other human."],
+    [50, "Ziggy forgot every other human."],
     [75, "Low on polygons, high on love."],
     [100, "Certified Ziggy petter."],
-    [150, "Ziggy asks if you're free on Sundays."],
+    [150, "Ziggy asks: free on Sundays?"],
     [200, "Your hand is now 30% orange fur."],
     [250, "Okay, now he's just a puddle."],
     [365, "One pet for every day of the year."],
-    [500, "Ziggy has started a fan club. You're the president."],
-    [1000, "Legendary. Ziggy will tell the kittens about you."]
+    [500, "You're now his fan club president."],
+    [1000, "A legend. Kittens will hear of you."]
   ];
 
   function mood(n) {
@@ -65,12 +66,14 @@
   function render() {
     if (count === 0) {
       text.textContent = "Ziggy is waiting for a pet.";
+      moodLine.textContent = "";
       return;
     }
     text.innerHTML = "";
     var b = document.createElement("b");
     b.textContent = count.toLocaleString("en");
-    text.append("Pets given: ", b, " · ", mood(count));
+    text.append("Pets given: ", b);
+    moodLine.textContent = mood(count);
   }
 
   function renderSound() {

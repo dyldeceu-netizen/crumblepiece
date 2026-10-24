@@ -291,7 +291,9 @@ button {
   margin: 34px 0 0;
   padding: 8px 18px 9px;
   font-weight: 800;
-  font-size: clamp(1.02rem, 3.6vw, 1.2rem);
+  font-size: clamp(0.8rem, 4vw, 1.2rem);  /* shrinks on small phones so it always stays on one line */
+  white-space: nowrap;
+  max-width: 100%;
   background: var(--paper);
   border-radius: 4px;
   box-shadow: var(--shadow);
@@ -327,6 +329,17 @@ button {
   font-size: 0.95rem;
   color: #fff;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6), 0 0 12px rgba(0, 0, 0, 0.45);
+}
+
+/* the mood line always sits on its own line under "Pets given: N" */
+.pet-mood {
+  flex-basis: 100%;
+  white-space: nowrap;
+  font-size: clamp(0.8rem, 3.8vw, 0.95rem);
+}
+
+.pet-mood:empty {
+  display: none;
 }
 
 .pet-count b {
