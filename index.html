@@ -1,109 +1,158 @@
 <!DOCTYPE html>
-
-<!--
-  To change the theme, change the class on the html tag below to one of:
-  - theme-auto: Automatically switches based on user's system preferences
-  - theme-light: Forces light theme
-  - theme-dark: Forces dark theme
--->
-
-<html class="theme-auto" lang="nl"> <!-- Update `class="theme-auto"` with your preference -->
+<html lang="en">
 
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Page Title - Change this to your name/brand (50-60 characters recommended) -->
-    <title>CrumblePiece</title>
-    <link rel="icon" type="image/png" href="images/avatar.png"> <!-- Update this with your own favicon -->
-
-    <!-- Meta Description - Write a description (150-160 characters recommended) -->
-    <meta name="description" content="Volg CrumblePiece op Instagram, YouTube en TikTok.">
-
-    <!-- Canonical URL - Helps prevent duplicate content issues -->
+    <title>CrumblePiece – wholesome cat videos from grandpa's house</title>
+    <meta name="description" content="Wholesome cat videos starring Ziggy, a very orange cat, and Grandpa. Watch CrumblePiece on YouTube, TikTok and Instagram.">
     <link rel="canonical" href="https://crumblepiece.com/">
-
-    <!-- Author Information -->
     <meta name="author" content="CrumblePiece">
 
-    <!-- Browser UI Color - Matches the default light/dark theme backgrounds -->
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <meta name="theme-color" content="#8fa287" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#2b2a30" media="(prefers-color-scheme: dark)">
 
-    <!-- Social Sharing (Open Graph & Twitter) - Uncomment and fill in to control how your page
-         looks when shared on social platforms and in chat apps.
-         og:url and og:image must be full absolute URLs. -->
-    <!--
+    <!-- How the page looks when shared in apps and on social media -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="CrumblePiece">
-    <meta property="og:description" content="A short description of your page.">
+    <meta property="og:description" content="Wholesome cat videos from grandpa's house, starring Ziggy and Grandpa.">
     <meta property="og:url" content="https://crumblepiece.com/">
-    <meta property="og:image" content="https://yourwebsite.com/images/avatar@2x.png">
-    <meta name="twitter:card" content="summary">
-    -->
+    <meta property="og:image" content="https://crumblepiece.com/images/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Grandpa on his sofa, petting Ziggy the orange cat">
+    <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Font Preloads - Lets the browser fetch fonts in parallel with the stylesheets -->
-    <link rel="preload" href="fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-800.woff2" as="font" type="font/woff2" crossorigin>
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preload" href="fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/brands.css">
-
-    <!-- LittleLink Extended Stylesheet (Optional) -->
-    <!-- <link rel="stylesheet" href="css/brands-extended.css"> -->
-    <!-- Learn more at https://github.com/sethcottle/littlelink-extended.
-         Remove comments if you've added LittleLink Extended dependencies -->
-
+    <script src="js/main.js" defer></script>
   </head>
 
-<body>
+  <body>
 
-    <div class="container">
-        <div class="column">
-          <main>
+    <div class="wall">
+      <main class="room">
 
-            <!--
-              By default, the Avatar is rounded. Use the following:
-              - avatar--rounded: Automatically rounds the image
-              - avatar--soft: Slightly rounds the image
-              - avatar--none: Removes any rounding
+        <!-- The family photo on the wall: tap it to pet Ziggy -->
+        <header class="hero">
+          <div class="frame-hang">
+            <button class="frame" id="pet" type="button" aria-describedby="pet-count">
+              <img src="images/hero-1200.jpg" srcset="images/hero-800.jpg 800w, images/hero-1200.jpg 1200w"
+                   sizes="(min-width: 700px) 620px, 92vw" width="1200" height="900" fetchpriority="high"
+                   alt="Grandpa in his mustard sweater on the sofa, gently petting Ziggy, an orange cat. Both look into the camera.">
+              <span class="frame-hint" aria-hidden="true">tap to pet Ziggy</span>
+              <span class="visually-hidden">Pet Ziggy</span>
+              <span class="hearts" aria-hidden="true"></span>
+            </button>
+          </div>
 
-              Be sure to replace the src with your own image path and update the alt text
-            -->
-            <img class="avatar avatar--rounded" src="images/avatar.png" srcset="images/avatar@2x.png 2x" alt="CrumblePiece" width="128" height="128" fetchpriority="high">
+          <h1 class="logo" aria-label="CrumblePiece">
+            <span class="logo-top" aria-hidden="true">Crumble</span>
+            <span class="logo-bottom" aria-hidden="true">Piece</span>
+          </h1>
 
-            <!-- Replace with your name or brand -->
-            <h1>CrumblePiece</h1>
+          <p class="tagline">Wholesome cat videos from grandpa's house.</p>
 
-            <!-- Add a short description about yourself or your brand -->
-            <p>Wholesome cat video's go here</p>
+          <p class="pet-count" id="pet-count" aria-live="polite">
+            <span id="pet-text">Ziggy is waiting for a pet.</span>
+            <button class="sound-toggle" id="sound" type="button" aria-pressed="true">sound on</button>
+          </p>
+        </header>
 
-            <!-- All your buttons go here -->
-            <nav class="button-stack" aria-label="Links">
+        <!-- Where to watch -->
+        <nav class="links" aria-label="Watch CrumblePiece">
 
-              <!-- Instagram -->
-              <a class="button button-instagram" href="https://www.instagram.com/crumblepiece" target="_blank" rel="noopener"><img class="icon" aria-hidden="true" src="images/icons/instagram.svg" alt="Instagram Logo">Instagram</a>
+          <a class="link link--main" href="https://www.youtube.com/@CrumblePiece" target="_blank" rel="noopener">
+            <span class="link-icon link-icon--yt"><img src="images/icons/youtube.svg" alt="" width="28" height="28"></span>
+            <span class="link-text">
+              <span class="link-title">YouTube</span>
+              <span class="link-sub">Shorts and longer stories</span>
+            </span>
+            <span class="link-badge">main channel</span>
+            <span class="link-arrow" aria-hidden="true"></span>
+          </a>
 
-              <!-- YouTube -->
-              <a class="button button-yt" href="https://www.youtube.com/@CrumblePiece" target="_blank" rel="noopener"><img class="icon" aria-hidden="true" src="images/icons/youtube.svg" alt="YouTube Logo">YouTube</a>
+          <a class="link" href="https://www.tiktok.com/@crumblepiece0" target="_blank" rel="noopener">
+            <span class="link-icon link-icon--tt"><img src="images/icons/tiktok.svg" alt="" width="26" height="26"></span>
+            <span class="link-text">
+              <span class="link-title">TikTok</span>
+              <span class="link-sub">Quick little cat moments</span>
+            </span>
+            <span class="link-arrow" aria-hidden="true"></span>
+          </a>
 
-              <!-- TikTok -->
-              <a class="button button-tiktok" href="https://www.tiktok.com/@crumblepiece0" target="_blank" rel="noopener"><img class="icon" aria-hidden="true" src="images/icons/tiktok.svg" alt="TikTok Logo">TikTok</a>
+          <a class="link" href="https://www.instagram.com/crumblepiece" target="_blank" rel="noopener">
+            <span class="link-icon link-icon--ig"><img src="images/icons/instagram.svg" alt="" width="26" height="26"></span>
+            <span class="link-text">
+              <span class="link-title">Instagram</span>
+              <span class="link-sub">Snapshots from grandpa's house</span>
+            </span>
+            <span class="link-arrow" aria-hidden="true"></span>
+          </a>
 
-      </nav>
+        </nav>
+
+        <!-- The two stars, as polaroids taped to the wallpaper -->
+        <section class="stars" aria-labelledby="stars-title">
+          <h2 class="sign" id="stars-title">Meet the stars</h2>
+
+          <div class="polaroids">
+            <figure class="polaroid polaroid--ziggy">
+              <img src="images/ziggy.jpg" width="600" height="600" loading="lazy"
+                   alt="Close-up of Ziggy, an orange cat, looking into the camera while Grandpa's hand rests on his head">
+              <figcaption>
+                <strong>Ziggy</strong>
+                Very orange. Runs on one braincell and a lot of love. Professional lap inspector, part-time loaf.
+              </figcaption>
+            </figure>
+
+            <figure class="polaroid polaroid--grandpa">
+              <img src="images/grandpa.jpg" width="600" height="600" loading="lazy"
+                   alt="Grandpa in his mustard sweater and checked shirt, smiling into the camera">
+              <figcaption>
+                <strong>Grandpa</strong>
+                Owns the house. On paper. Always has a warm lap, a gentle hand and a secret treat stash.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- What the channel is about: three notes on the wall -->
+        <section class="notes" aria-label="What you'll find">
+          <p class="note note--1">Why cats do the funny things they do, gently explained</p>
+          <p class="note note--2">Cozy little stories from one little house</p>
+          <p class="note note--3">Kittens. <br>So many kittens.</p>
+        </section>
+
+        <!-- The rest of the household -->
+        <section class="family" aria-labelledby="family-title">
+          <figure class="drawing">
+            <img src="images/tex/kid_drawing.png" width="96" height="128" loading="lazy"
+                 alt="A child's crayon drawing of a blue house, an orange cat, a golden dog and grandpa in a yellow sweater">
+            <figcaption>the whole family, in crayon</figcaption>
+          </figure>
+          <div class="family-text">
+            <h2 class="family-title" id="family-title">Also living here</h2>
+            <p>A golden retriever who means well, a tortie with a lot of opinions and more kittens than strictly necessary.</p>
+            <img class="kittens" src="images/kittens.jpg" width="720" height="215" loading="lazy"
+                 alt="Four kittens peeking over the edge of a box with big blue eyes">
+          </div>
+        </section>
+
       </main>
-
-      <!-- Feel free to add your own footer information, including updating `privacy.html` to reflect how your LittleLink fork is set up -->
-      <footer>
-        
-      </footer>
-
     </div>
-  </div>
 
-</body>
+    <!-- Skirting board, wooden floor and the doormat -->
+    <footer class="floor">
+      <img class="doormat" src="images/tex/doormat.png" width="96" height="72" alt="A doormat that says HELLO">
+      <p class="floor-line">Come back soon. The kettle's always on.</p>
+      <p class="floor-small">© 2026 CrumblePiece · <a href="privacy.html">Privacy</a> · no cookies, just cats</p>
+    </footer>
+
+  </body>
 
 </html>
