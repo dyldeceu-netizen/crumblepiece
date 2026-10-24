@@ -36,12 +36,22 @@
   // a little line that grows with the count
   var MOODS = [
     [1, "Ziggy approves."],
+    [3, "Slow blink received."],
     [5, "Purr level: tractor."],
+    [8, "He's making biscuits."],
     [12, "One braincell, fully charged."],
+    [18, "Loaf mode activated."],
     [25, "I'm getting a bit jealous."],
+    [35, "Belly offered. It's a trap."],
     [50, "Ziggy has forgotten every other human."],
+    [75, "Low on polygons, high on love."],
     [100, "Certified Ziggy petter."],
-    [250, "Okay, now he's just a puddle."]
+    [150, "Ziggy asks if you're free on Sundays."],
+    [200, "Your hand is now 30% orange fur."],
+    [250, "Okay, now he's just a puddle."],
+    [365, "One pet for every day of the year."],
+    [500, "Ziggy has started a fan club. You're the president."],
+    [1000, "Legendary. Ziggy will tell the kittens about you."]
   ];
 
   function mood(n) {
